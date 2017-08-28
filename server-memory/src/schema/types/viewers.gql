@@ -1,0 +1,34 @@
+type QueryViewer {
+  item(id: ID!): Item
+  items: [Item!]!
+}
+
+type MutationViewer {
+  createItem(input: CreateItemInput!): CreateItemPayload!
+  deleteItem(input: DeleteItemInput!): DeleteItemPayload!
+  toggleItem(input: ToggleItemInput!): ToggleItemPayload!
+}
+
+input CreateItemInput {
+  name: String!
+}
+
+type CreateItemPayload {
+  item: Item
+}
+
+input DeleteItemInput {
+  id: ID!
+}
+
+type DeleteItemPayload {
+  success: Boolean!
+}
+
+input ToggleItemInput {
+  id: ID!
+}
+
+type ToggleItemPayload {
+  item: Item
+}

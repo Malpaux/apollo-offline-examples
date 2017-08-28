@@ -1,0 +1,7 @@
+type Item implements Entity {
+  id: ID!
+
+  done: Boolean!
+  name: String!
+  owner: User!
+}

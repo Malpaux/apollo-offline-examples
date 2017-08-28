@@ -1,0 +1,7 @@
+mutation DeleteItemMutation($token: String!, $input: DeleteItemInput!) {
+  viewer(token: $token) {
+    deleteItem(input: $input) {
+      success
+    }
+  }
+}

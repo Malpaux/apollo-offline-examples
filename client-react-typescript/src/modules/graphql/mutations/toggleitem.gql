@@ -1,0 +1,11 @@
+#import "../fragments/item.gql"
+
+mutation ToggleItemMutation($token: String!, $input: ToggleItemInput!) {
+  viewer(token: $token) {
+    toggleItem(input: $input) {
+      item {
+        ... ItemData
+      }
+    }
+  }
+}

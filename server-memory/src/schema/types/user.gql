@@ -1,0 +1,6 @@
+type User implements Entity {
+  id: ID!
+
+  email: String!
+  # Hashed password may not be retrieved for security purposes
+}

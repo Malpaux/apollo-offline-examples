@@ -1,0 +1,28 @@
+box: node
+
+build:
+  steps:
+    # Install yarn & project dependencies
+    - script:
+      name: install yarn
+      code: npm install -g yarn
+    - script:
+      name: set yarn cache
+      code: export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
+    - script:
+      name: install dependencies
+      code: HOME=$YARN_CACHE yarn --frozen-lockfile
+
+    # Check code & build
+    - script:
+      name: lint
+      code: npm run lint
+    - npm-test
+    - script:
+      name: build
+      code: npm run build
+
+    # Clean-up & pass to deploy pipeline
+    - script:
+      name: copy build
+      code: cp -a dist/. "$WERCKER_OUTPUT_DIR"

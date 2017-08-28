@@ -1,0 +1,28 @@
+#import "./types/interfaces.gql"
+#import "./types/item.gql"
+#import "./types/user.gql"
+#import "./types/viewers.gql"
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  viewer(token: String!): QueryViewer!
+}
+
+type Mutation {
+  createToken(input: CreateTokenInput!): CreateTokenPayload!
+
+  viewer(token: String!): MutationViewer!
+}
+
+input CreateTokenInput {
+  email: String!
+  password: String!
+}
+
+type CreateTokenPayload {
+  token: String
+}

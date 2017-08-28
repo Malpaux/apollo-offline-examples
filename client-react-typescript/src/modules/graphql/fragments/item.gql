@@ -1,0 +1,6 @@
+fragment ItemData on Item {
+  id
+
+  done
+  name
+}

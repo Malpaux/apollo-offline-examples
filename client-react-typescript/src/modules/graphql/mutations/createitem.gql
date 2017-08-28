@@ -1,0 +1,11 @@
+#import "../fragments/item.gql"
+
+mutation CreateItemMutation($token: String!, $input: CreateItemInput!) {
+  viewer(token: $token) {
+    createItem(input: $input) {
+      item {
+        ... ItemData
+      }
+    }
+  }
+}

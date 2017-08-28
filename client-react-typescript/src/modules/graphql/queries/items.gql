@@ -1,0 +1,9 @@
+#import "../fragments/item.gql"
+
+query ItemsQuery($token: String!) {
+  viewer(token: $token) {
+    items {
+      ... ItemData
+    }
+  }
+}
