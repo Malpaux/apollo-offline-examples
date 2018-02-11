@@ -2,11 +2,12 @@
  * @file Main entry point
  */
 
+/// <reference types="@redux-offline/redux-offline" />
+import config from '@redux-offline/redux-offline/lib/defaults';
 import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import ReactDOM from 'react-dom';
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
-import config from 'redux-offline/lib/defaults';
+import { applyMiddleware, combineReducers, compose, createStore, Reducer } from 'redux';
 
 import App from './App';
 import Loading from './components/Loading';
@@ -21,8 +22,8 @@ authenticator.init();
 /** The Redux store */
 export const store = createStore(
   combineReducers({
-    apollo: client.reducer(),
-  }),
+    apollo: client.reducer() as Reducer<any>,
+  }) as Reducer<any>,
   undefined,
   compose(
     applyMiddleware(client.middleware()),

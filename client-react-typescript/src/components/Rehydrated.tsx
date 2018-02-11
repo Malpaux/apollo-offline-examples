@@ -15,6 +15,11 @@ const Rehydrated = (
   rehydrated: boolean,
 }>;
 
-export default connect<{ rehydrated: boolean }, object, { loading?: React.ReactElement<any> }>(
+export default connect<
+  { rehydrated: boolean },
+  object,
+  { loading?: React.ReactElement<any> },
+  { rehydrated: boolean }
+>(
   ({ rehydrated }) => ({ rehydrated }),
 )(Rehydrated);

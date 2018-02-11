@@ -88,6 +88,6 @@ class Create extends React.PureComponent<InjectedProps & InjectedThemeProps & {
   }
 }
 
-export default graphql<{}, {}>(createItem)(withTheme(withStyles<InjectedThemeProps & {
+export default graphql<{}, {}>(createItem)(withTheme<any>(withStyles<InjectedThemeProps & {
   mutate: MutationFunc<any>,
 }>(Create)));

@@ -20,10 +20,13 @@
       "alphabetize": true
     }],
     "no-bitwise": false,
+    "no-implicit-dependencies": [true, "dev"],
+    "no-submodule-imports": false,
     "no-use-before-declare": true,
     "object-shorthand-properties-first": false,
     "ordered-imports": true,
     "quotemark": [true, "single", "jsx-double"],
+    "strict-boolean-expressions": false,
     "ter-arrow-parens": true,
     "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"]

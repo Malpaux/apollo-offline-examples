@@ -44,4 +44,4 @@ export default graphql<{}, {}>(itemsQuery, {
       token: authenticator.getToken(),
     },
   }),
-})(MainContainer);
+})(MainContainer as React.ComponentClass<any>);

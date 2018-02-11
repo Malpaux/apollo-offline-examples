@@ -18,11 +18,7 @@ export const { enhancer, networkInterface } = offline(
 );
 
 /** Identify objects */
-export const dataIdFromObject = (object: {
-  __typename: string,
-  id?: string,
-  [key: string]: any,
-}) => {
+export const dataIdFromObject = (object: { [key: string]: any }) => {
   switch (object.__typename) {
     case 'MutationViewer':
       return 'MutationViewer';
@@ -35,7 +31,7 @@ export const dataIdFromObject = (object: {
 };
 
 /** Resolve to passed id */
-export const identityResolver = (_: any, args: { id: string }) => toIdValue(args.id);
+export const identityResolver = (_: any, args: { [key: string]: any }) => toIdValue(args.id);
 
 /** The Apollo client */
 const client = new ApolloClient({
